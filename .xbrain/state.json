@@ -1,40 +1,44 @@
 {
-  "version": 1,
-  "updated_at": "2026-02-14T00:00:00+08:00",
+  "version": 2,
+  "updated_at": "auto",
   "git": {
     "initialized": true,
     "branch": "main",
     "remote_origin": "https://github.com/dn0218/Xbrain.git",
-    "credential_helper": "manager (Windows 凭据管理器, 已验证可推送)",
-    "last_push": "成功, main -> origin/main",
-    "gitignore": [".cptr/", "*.tmp", "~$*", "Thumbs.db", ".DS_Store"]
+    "last_push": "成功 (b227d77)"
   },
   "xmind_mcp": {
     "endpoint": "https://app.xmind.com/api/mcp",
-    "auth_status": "待授权 (401 Unauthorized)",
-    "oauth": {
-      "authorization_endpoint": "https://app.xmind.com/oauth/consent",
-      "token_endpoint": "https://app.xmind.com/api/oauth/token",
-      "registration_endpoint": "https://app.xmind.com/api/oauth/register",
-      "required_scopes": ["mcp:connect"],
-      "grant_types": ["authorization_code", "refresh_token"],
-      "pkce": "S256"
+    "auth_status": "待授权 - 等待用户浏览器 OAuth",
+    "oauth_client_id": "QXpMLSMbDSDeuh",
+    "oauth_flow": "authorization_code + PKCE(S256), 公共客户端",
+    "note": "授权入口 http://127.0.0.1:8765/oauth/authorize"
+  },
+  "mcp_proxy": {
+    "status": "running",
+    "url": "http://127.0.0.1:8765",
+    "port": 8765,
+    "start_command": "start /b \"\" C:\\Python314\\python.exe -m uvicorn main:app --app-dir mcp_proxy --host 127.0.0.1 --port 8765",
+    "watchdog_bat": "mcp_proxy/start_proxy.bat",
+    "bearer_token_location": "mcp_proxy/config.json (已gitignore, 勿提交)",
+    "oauth_token_location": "mcp_proxy/tokens.json (已gitignore, 勿提交)",
+    "endpoints": {
+      "health": "/health",
+      "authorize": "/oauth/authorize",
+      "callback": "/oauth/callback",
+    "openapi": "/openapi.json",
+      "mcp_forward": "/mcp",
+      "tools_list": "/mcp/tools/list",
+      "tool_call": "/tools/{tool_name}"
     },
-    "fallback": "使用 scripts/make_xmind.py 直接生成 .xmind (XMind 2020+ JSON 格式), 工作流不中断",
-    "note": "授权需在 Open WebUI 的 MCP/工具设置中完成浏览器 OAuth; 当前环境无 XMind MCP 工具接入"
+    "verified": ["健康检查OK", "Bearer 401保护OK", "openapi.json 200 OK", "未授权时返回409引导"]
   },
   "mindmaps": [
-    {"file": "Xbrain.xmind", "root": "我的知识体系", "branches": ["哲学", "科技", "数理化", "神学"]},
-    {"file": "哲学/哲学.xmind", "root": "哲学", "branches": ["形而上学", "认识论", "伦理学", "逻辑学", "美学", "哲学史"]},
-    {"file": "科技/科技.xmind", "root": "科技", "branches": ["计算机科学", "人工智能", "生物技术", "能源与材料", "航天与天文技术"]},
-    {"file": "数理化/数理化.xmind", "root": "数理化", "branches": ["数学", "物理", "化学"]},
-    {"file": "神学/神学.xmind", "root": "神学", "branches": ["圣经研究", "系统神学", "历史神学", "实践神学", "比较宗教"]}
+    {"file": "Xbrain.xmind", "root": "我的知识体系"},
+    {"file": "哲学/哲学.xmind", "root": "哲学"},
+    {"file": "科技/科技.xmind", "root": "科技"},
+    {"file": "数理化/数理化.xmind", "root": "数理化"},
+    {"file": "神学/神学.xmind", "root": "神学"}
   ],
-  "directories": ["哲学", "科技", "数理化", "神学", "scripts", ".xbrain"],
-  "toolchain": {
-    "python": "3.14.7",
-    "generator_script": "scripts/make_xmind.py",
-    "data_sources": ["scripts/xbrain_overview.json", "scripts/philosophy.json", "scripts/tech.json", "scripts/sci.json", "scripts/theology.json"]
-  },
-  "workflow": "用户提交学习内容 -> 更新对应学科 JSON -> 运行 make_xmind.py 重新生成 .xmind -> git add -A && git commit && git push"
+  "workflow": "优先经代理调用 XMind MCP 工具读写 .xmind; 代理不可用时回退 scripts/make_xmind.py; 每次变更后 git add -A && commit && push"
 }
