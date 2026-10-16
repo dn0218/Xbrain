@@ -1,0 +1,5 @@
+{"type": "start", "command": "git --version && git config --global user.name && git config --global user.email && git config --global credential.helper", "pid": 110536, "ts": 1792131708.2642138}
+{"type": "output", "data": "git version 2.55.0.windows.3\n", "ts": 1792131708.7792041}
+{"type": "output", "data": "DANNY HII LU HUI\n", "ts": 1792131709.5441263}
+{"type": "output", "data": "dn020218@gmail.com\n", "ts": 1792131709.9844851}
+{"type": "end", "exit_code": 1, "ts": 1792131710.4033854}
