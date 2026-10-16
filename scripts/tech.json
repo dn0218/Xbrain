@@ -1,0 +1,18 @@
+[
+  {"title": "计算机科学", "children": [
+    {"title": "算法与数据结构", "children": ["排序与查找", "树与图", "动态规划", "复杂度分析"]},
+    {"title": "操作系统", "children": ["进程与线程", "内存管理", "文件系统"]},
+    {"title": "计算机网络", "children": ["TCP/IP 协议栈", "HTTP/HTTPS", "DNS 与 CDN"]},
+    {"title": "数据库", "children": ["关系模型与 SQL", "事务与 ACID", "NoSQL"]},
+    {"title": "软件工程", "children": ["设计模式", "敏捷开发", "测试与 CI/CD"]}
+  ]},
+  {"title": "人工智能", "children": [
+    {"title": "机器学习", "children": ["监督学习", "无监督学习", "强化学习"]},
+    {"title": "深度学习", "children": ["神经网络基础", "CNN", "RNN/Transformer", "扩散模型"]},
+    {"title": "大语言模型", "children": ["预训练与微调", "RLHF", "提示工程", "Agent 与工具调用"]},
+    {"title": "AI 伦理与安全", "children": ["对齐问题", "可解释性", "隐私与公平"]}
+  ]},
+  {"title": "生物技术", "children": ["基因编辑（CRISPR）", "mRNA 技术", "合成生物学", "脑机接口"]},
+  {"title": "能源与材料", "children": ["光伏与风能", "核聚变", "锂电池", "半导体工艺", "纳米材料"]},
+  {"title": "航天与天文技术", "children": ["可回收火箭", "卫星星座", "深空探测", "空间望远镜"]}
+]
