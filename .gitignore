@@ -3,4 +3,9 @@
 ~$*
 Thumbs.db
 .DS_Store
+
+# 敏感信息（Bearer token / OAuth token / 日志）
+mcp_proxy/config.json
+mcp_proxy/tokens.json
+mcp_proxy/proxy.log
 .cptr/  
