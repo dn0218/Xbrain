@@ -8,7 +8,7 @@
 Xbrain/
 ├── README.md           # 本说明文件
 ├── Xbrain.xmind        # 知识体系总览脑图
-├── 哲学/哲学.xmind     # 哲学（形而上学/认识论/伦理学/逻辑学/美学/哲学史）
+├── 哲学/哲学.xmind     # 哲学（形而上学/认识论/伦理学/逻辑学/美学/哲学史/宗教哲学）
 ├── 科技/科技.xmind     # 科技（计算机/AI/生物技术/能源材料/航天）
 ├── 数理化/数理化.xmind # 数学、物理、化学
 ├── 神学/神学.xmind     # 神学（圣经研究/系统/历史/实践神学/比较宗教）
@@ -40,3 +40,17 @@ Xbrain/
 ## 脑图生成方式
 
 当前通过 `scripts/make_xmind.py` 直接生成 XMind 2020+ 格式（ZIP: content.json + manifest.json + metadata.json）的 .xmind 文件，可在 XMind 中正常打开编辑。XMind MCP（https://app.xmind.com/api/mcp ）完成 OAuth 授权后可切换为 MCP 方式管理。
+
+### 排版约定
+
+所有脑图统一使用 **树状向右** 布局（`rootTopic.structureClass = org.xmind.ui.logic.right`），且 **深度 ≥3 的分支默认折叠**（`folded: true`），打开即见两级概览，逐层展开不乱。
+
+### 维护脚本（scripts/）
+
+| 脚本 | 用法 | 说明 |
+| --- | --- | --- |
+| `make_xmind.py` | `make_xmind.py <输出.xmind> <根主题> <分支.json>` | 全量生成脑图 |
+| `insert_branch.py` | `insert_branch.py <.xmind或json> <父路径> <分支.json>` | 按标题路径增量插入分支（如 `哲学史/中国哲学`，`.` 表示顶层），已存在同名则跳过 |
+| `set_structure.py` | `set_structure.py <.xmind> [tree-right]` | 设置布局：tree-right / tree-left / map 或原生 structureClass ID |
+| `set_fold.py` | `set_fold.py <.xmind> [3]` | 深度 ≥N 的分支默认折叠（0 = 全部展开） |
+| `dump_xmind.py` | `dump_xmind.py <.xmind> [深度]` | 打印主题树，验证结构 |
