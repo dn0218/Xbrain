@@ -9,3 +9,6 @@ mcp_proxy/config.json
 mcp_proxy/tokens.json
 mcp_proxy/proxy.log
 .cptr/  
+__pycache__/  
+mcp_proxy/uvicorn.log  
+*.pyc  
