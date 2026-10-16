@@ -1,3 +1,0 @@
-{"type": "start", "command": "git init -b main", "pid": 86784, "ts": 1792131735.335271}
-{"type": "output", "data": "Initialized empty Git repository in C:/Users/User/Desktop/Xbrain/.git/\n", "ts": 1792131736.4414759}
-{"type": "end", "exit_code": 0, "ts": 1792131736.5381668}

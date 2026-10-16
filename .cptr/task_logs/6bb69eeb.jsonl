@@ -1,4 +1,0 @@
-{"type": "start", "command": "git config --system credential.helper & git config --global -l 2>nul | findstr /i \"credential\" & echo DONE", "pid": 110492, "ts": 1792131731.1511803}
-{"type": "output", "data": "manager\n", "ts": 1792131731.7133586}
-{"type": "output", "data": "DONE\r\n", "ts": 1792131732.980166}
-{"type": "end", "exit_code": 0, "ts": 1792131733.0071774}

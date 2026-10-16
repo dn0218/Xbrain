@@ -1,3 +1,0 @@
-{"type": "start", "command": "git status && git remote -v && git log --oneline -5 2>nul", "pid": 107736, "ts": 1792131695.4591324}
-{"type": "output", "data": "fatal: not a git repository (or any of the parent directories): .git\n", "ts": 1792131695.923436}
-{"type": "end", "exit_code": 128, "ts": 1792131695.9384458}

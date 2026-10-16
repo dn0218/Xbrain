@@ -1,4 +1,0 @@
-{"type": "start", "command": "curl -s -X POST https://app.xmind.com/api/mcp -H \"Content-Type: application/json\" -H \"Accept: application/json, text/event-stream\" -d \"{\\\"jsonrpc\\\":\\\"2.0\\\",\\\"id\\\":1,\\\"method\\\":\\\"initialize\\\",\\\"params\\\":{\\\"protocolVersion\\\":\\\"2024-11-05\\\",\\\"capabilities\\\":{},\\\"clientInfo\\\":{\\\"name\\\":\\\"xbrain-agent\\\",\\\"version\\\":\\\"1.0\\\"}}}\" -w \"\\nHTTP_STATUS:%{http_code}\\n\" --max-time 15", "pid": 110528, "ts": 1792131814.2527907}
-{"type": "output", "data": "{\"error\":\"Unauthorized: Missing or invalid Authorization header\"}", "ts": 1792131815.1603749}
-{"type": "output", "data": "\nHTTP_STATUS:401\n", "ts": 1792131815.176435}
-{"type": "end", "exit_code": 0, "ts": 1792131815.2505429}

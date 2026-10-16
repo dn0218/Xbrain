@@ -1,4 +1,0 @@
-{"type": "start", "command": "curl -s -o nul -w \"github:%%{http_code}\\n\" https://github.com & curl -s -o nul -w \"xmind:%%{http_code}\\n\" https://app.xmind.com", "pid": 99144, "ts": 1792131711.570083}
-{"type": "output", "data": "github:%{http_code}\r\n", "ts": 1792131713.0413299}
-{"type": "output", "data": "xmind:%{http_code}\r\n", "ts": 1792131715.1911001}
-{"type": "end", "exit_code": 0, "ts": 1792131715.2121048}

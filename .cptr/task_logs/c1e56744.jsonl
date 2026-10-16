@@ -1,5 +1,0 @@
-{"type": "start", "command": "where xmind 2>nul & where XMind 2>nul & dir \"C:\\Program Files\\XMind\" 2>nul & dir \"C:\\Users\\User\\AppData\\Local\\Programs\\XMind\" 2>nul & echo CHECK_DONE", "pid": 39828, "ts": 1792131710.444384}
-{"type": "output", "data": " Volume in drive C is Acer\r\n Volume Serial Number is 4446-6468\r\n\r\n Directory of C:\\Program Files\r\n\r\n", "ts": 1792131711.498407}
-{"type": "output", "data": " Volume in drive C is Acer\r\n Volume Serial Number is 4446-6468\r\n\r\n Directory of C:\\Users\\User\\AppData\\Local\\Programs\r\n\r\n", "ts": 1792131711.5003963}
-{"type": "output", "data": "CHECK_DONE\r\n", "ts": 1792131711.5003963}
-{"type": "end", "exit_code": 0, "ts": 1792131711.5153959}

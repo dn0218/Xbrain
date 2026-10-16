@@ -1,5 +1,0 @@
-{"type": "start", "command": "python scripts\\make_xmind.py Xbrain.xmind \"\u6211\u7684\u77e5\u8bc6\u4f53\u7cfb\" scripts\\xbrain_overview.json && mkdir \u54f2\u5b66 \u79d1\u6280 \u6570\u7406\u5316 \u795e\u5b66 && echo. > \u54f2\u5b66\\.gitkeep && echo. > \u79d1\u6280\\.gitkeep && echo. > \u6570\u7406\u5316\\.gitkeep && echo. > \u795e\u5b66\\.gitkeep && dir /b", "pid": 110544, "ts": 1792131921.4948163}
-{"type": "output", "data": "OK: Xbrain.xmind\r\n", "ts": 1792131922.0435662}
-{"type": "output", "data": ".cptr\r\n", "ts": 1792131922.128099}
-{"type": "output", "data": "README.md\r\nscripts\r\nXbrain.xmind\r\n\u54f2\u5b66\r\n\u6570\u7406\u5316\r\n\u795e\u5b66\r\n\u79d1\u6280\r\n", "ts": 1792131922.1290972}
-{"type": "end", "exit_code": 0, "ts": 1792131922.144096}
