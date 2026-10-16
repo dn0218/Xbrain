@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "updated_at": "auto",
   "git": {
     "initialized": true,
@@ -9,10 +9,12 @@
   },
   "xmind_mcp": {
     "endpoint": "https://app.xmind.com/api/mcp",
-    "auth_status": "待授权 - 等待用户浏览器 OAuth",
+    "auth_status": "已授权 (OAuth 2.1 + PKCE, token 自动刷新)",
     "oauth_client_id": "QXpMLSMbDSDeuh",
     "oauth_flow": "authorization_code + PKCE(S256), 公共客户端",
-    "note": "授权入口 http://127.0.0.1:8765/oauth/authorize"
+    "note": "授权入口 http://127.0.0.1:8765/oauth/authorize",
+    "team": "My Works (_xmind_EpPfXCesBx)",
+    "cloud_fileId_overview": "MkjDjKFH"
   },
   "mcp_proxy": {
     "status": "running",
@@ -26,19 +28,44 @@
       "health": "/health",
       "authorize": "/oauth/authorize",
       "callback": "/oauth/callback",
-    "openapi": "/openapi.json",
+      "openapi": "/openapi.json",
       "mcp_forward": "/mcp",
       "tools_list": "/mcp/tools/list",
       "tool_call": "/tools/{tool_name}"
     },
-    "verified": ["健康检查OK", "Bearer 401保护OK", "openapi.json 200 OK", "未授权时返回409引导"]
+    "verified": [
+      "健康检查OK",
+      "Bearer 401保护OK",
+      "openapi.json 200 OK",
+      "未授权时返回409引导",
+      "OAuth授权成功",
+      "tools/list 33个工具",
+      "创建脑图成功(fileId MkjDjKFH)",
+      "openapi.json 35工具端点",
+      "云端到本地.xmind同步"
+    ]
   },
   "mindmaps": [
-    {"file": "Xbrain.xmind", "root": "我的知识体系"},
-    {"file": "哲学/哲学.xmind", "root": "哲学"},
-    {"file": "科技/科技.xmind", "root": "科技"},
-    {"file": "数理化/数理化.xmind", "root": "数理化"},
-    {"file": "神学/神学.xmind", "root": "神学"}
+    {
+      "file": "Xbrain.xmind",
+      "root": "我的知识体系"
+    },
+    {
+      "file": "哲学/哲学.xmind",
+      "root": "哲学"
+    },
+    {
+      "file": "科技/科技.xmind",
+      "root": "科技"
+    },
+    {
+      "file": "数理化/数理化.xmind",
+      "root": "数理化"
+    },
+    {
+      "file": "神学/神学.xmind",
+      "root": "神学"
+    }
   ],
   "workflow": "优先经代理调用 XMind MCP 工具读写 .xmind; 代理不可用时回退 scripts/make_xmind.py; 每次变更后 git add -A && commit && push"
 }

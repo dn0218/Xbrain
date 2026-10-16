@@ -122,7 +122,8 @@ def parse_rpc_response(r: httpx.Response, want_id: Any) -> Any:
     return obj
 
 
-app = FastAPI(title="Xbrain MCPO Proxy", version="1.0", docs_url="/docs")
+# openapi_url=None：禁用内置 /openapi.json（否则会遮蔽下方自定义动态端点）
+app = FastAPI(title="Xbrain MCPO Proxy", version="1.0", openapi_url=None, docs_url=None, redoc_url=None)
 
 
 @app.get("/", response_class=HTMLResponse)
