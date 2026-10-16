@@ -8,10 +8,12 @@
 Xbrain/
 ├── README.md           # 本说明文件
 ├── Xbrain.xmind        # 知识体系总览脑图
-├── 哲学/               # 哲学类脑图
-├── 科技/               # 科技类脑图
-├── 数理化/             # 数学、物理、化学类脑图
-└── 神学/               # 神学类脑图
+├── 哲学/哲学.xmind     # 哲学（形而上学/认识论/伦理学/逻辑学/美学/哲学史）
+├── 科技/科技.xmind     # 科技（计算机/AI/生物技术/能源材料/航天）
+├── 数理化/数理化.xmind # 数学、物理、化学
+├── 神学/神学.xmind     # 神学（圣经研究/系统/历史/实践神学/比较宗教）
+├── scripts/            # 脑图生成脚本与数据源（JSON）
+└── .xbrain/state.json  # 智能体环境状态文件
 ```
 
 ## 知识体系框架
@@ -34,3 +36,7 @@ Xbrain/
 
 - 远程仓库：https://github.com/dn0218/Xbrain.git
 - 主分支：`main`
+
+## 脑图生成方式
+
+当前通过 `scripts/make_xmind.py` 直接生成 XMind 2020+ 格式（ZIP: content.json + manifest.json + metadata.json）的 .xmind 文件，可在 XMind 中正常打开编辑。XMind MCP（https://app.xmind.com/api/mcp ）完成 OAuth 授权后可切换为 MCP 方式管理。
